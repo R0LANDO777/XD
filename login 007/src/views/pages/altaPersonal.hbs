@@ -1,102 +1,67 @@
-<style>.card{ width: 400px; border:none; } .btr{
-  border-top-right-radius: 5px !important; } .btl{ border-top-left-radius: 5px
-  !important; } .btn-dark { color: #fff; background-color: #0d6efd;
-  border-color: #0d6efd; } .btn-dark:hover { color: #fff; background-color:
-  #0d6efd; border-color: #0d6efd; } .nav-pills{ display:table !important;
-  width:100%; } .nav-pills .nav-link { border-radius: 0px; border-bottom: 1px
-  solid #0d6efd40; } .nav-item{ display: table-cell; background: #0d6efd2e; }
-  .form{ padding: 10px; height: 450px; } .form input{ margin-bottom: 12px;
-  border-radius: 3px; } .form input:focus{ box-shadow: none; } .form button{
-  margin-top: 20px; } .tab-content{ padding-bottom: 150px; }
-</style>
+<body>
+	<div class="container w-50 px-5 pb-5 my-5">
+		<div class="row">
+			<div class="col">
+				<h1 class="fw-bold text-center pt-5 mb-5"> Registro de empleados </h1>
+				<form class="form" action="/registraPer" method="post">
 
-<div class="d-flex justify-content-center align-items-center mt-5">
 
-  <div class="card">
+					<div class="mb-4">
+						<label for="apPaterno" class="form-label"> Apellido paterno </label>
+						<input requiered type="text" id="apPaterno" name="apPaterno" class="form-control text-bg-light"
+							placeholder="apellido paterno" pattern="[A-Za-z]*" minlength="4" maxlength="40">
+					</div>
 
-        <form class="form px-5" action="/registraPer" method="post">
+					<div class="mb-4">
+						<label for="apMaterno" class="form-label"> Apellido materno </label>
+						<input requiered type="text" id="apMaterno" name="apMaterno" class="form-control text-bg-light"
+							placeholder="apellido materno" pattern="[A-Za-z]*" minlength="4" maxlength="40">
+					</div>
 
-          <input
-            type="text"
-            name="apPaterno"
-            class="form-control"
-            placeholder="Apellido paterno"
-            maxlength="25"
-            required
-          />
+					<div class="mb-4">
+						<label for="nombre" class="form-label"> Nombre </label>
+						<input requiered type="text" id="nombre" name="nombre" class="form-control text-bg-light"
+							placeholder="ingresa el nombre del empleado" pattern="[A-Za-z]*" minlength="3" maxlength="30">
+					</div>
 
-          <input
-            type="text"
-            name="apMaterno"
-            class="form-control"
-            placeholder="Apellido materno"
-            maxlength="25"
-            required
-          />
+					<div class="mb-4">
+						<label for="fechaNacimiento" class="form-label"> Fecha de nacimiento </label>
+						<input requiered type="date" id="date" name="fechaNacimiento" class="form-control text-bg-light"
+							placeholder="1990/01/01" min="1960-12-31" max="2010-12-31">
+					</div>
 
-          <input
-            type="text"
-            name="nombre"
-            class="form-control"
-            placeholder="Nombre o nombres"
-            maxlength="25"
-            required
-          />
-          <input
-            class="form-control"
-            name="fechaNacimiento"
-            type="date"
-            placeholder="Fecha"
-            required
-          />
+					<div class="mb-4">
+						<label for="telefono" class="form-label"> Número de teléfono </label>
+						<input requiered type="tel" id="tel" name="telefono" class="form-control text-bg-light"
+							placeholder="4490000000" minlength="10" maxlength="10">
+					</div>
 
-          <input
-            name="telefono"
-            type="tel"
-            class="form-control"
-            placeholder="Numero de telefono"
-            title="Pon un numero de telefono con 10 digitos"
-            pattern="[0-9]{10}"
-            minlength="10"
-            maxlength="10"
-            required
-          />
+					<div class="mb-4">
+						<label for="email" class="form-label"> Email </label>
+						<input requiered type="email" id="email" name="email" class="form-control text-bg-light"
+							placeholder="ejemplo@cetis155.edu.mx" minlength="0" maxlength="50">
+					</div>
 
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            placeholder="Email"
-            maxlength="50"
-            required
-          />
+					<div class="mb-4">
+						<label for="password" class="form-label"> Contraseña </label>
+						<input requiered type="password" id="password" name="password" class="form-control text-bg-light"
+							placeholder="••••••••" minlength="8" maxlength="25">
+					</div>
 
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            placeholder="Password"
-            minlength="8"
-            maxlength="16"
-            required
-          />
+					<input type="hidden" name="rol", value="p">
 
-          <input type="hidden" name="rol", value="p">
+					{{#if error}}
+						<p style="color: red;">{{error}}</p>
+					{{/if}}
 
-          {{#if error}}
+					<div class="d-grid">
+						<button type="submit" class="btn"> Registrar nuevo empleado </button>
+					</div>
 
-            <p style="color: red;">{{error}}</p>
 
-          {{/if}}
-
-          <button class="btn btn-dark btn-block">Signup</button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

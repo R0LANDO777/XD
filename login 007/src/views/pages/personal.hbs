@@ -1,36 +1,47 @@
-<body >
-  <right><a href="/altaPersonal">Alta</a></right>
+<body>
+	<a href="/alta">
+		<button clas="warning"> Alta </button>
+	</a>
 
-  <center>
-    <h2>Personal</h2>
-  </center>
+	<div class="container w-100 px-5 py-5 my-5">
+		<h1> Personal </h1>
+		<table class="table table-striped">
 
-  <center>
-    <table class="content-table">
-  </center>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each per}}
-     <tr>
-      <td>{{idUser}}</td>
-      <td>{{nombre}}</td>
-      <td><a href="/editar/{{idUser}}">
-        <button type="button"  class="btn btn-outline-primary me-2">
-              Editar
-            </button>
-          </a></td>
-      <td><a href="/elimina/{{idUser}}"><button type="button"  class="btn btn-outline-primary me-2">
-              Baja
-            </button></a></td>
-    </tr>
-    {{/each}}
-  </tbody>
+			<thead>
+				<tr>
+					<th scope="col"> ID Usuario </th>
+					<th scope="col"> Nombre </th>
+					<th scope="col"> Editar </th>
+					<th scope="col"> Borrar </th>
+				</tr>
+			</thead>
 
+			<tbody>
+				{{#each per}}
+				<tr>
+					<td style="color: white;">{{idUser}}</td>
+					<td style="color: white;">{{nombre}}</td>
+
+					<td>
+						<a href="/editar/{{idUser}}">
+							<button type="button" class="btn btn-outline-primary me-2">
+								Editar
+							</button>
+						</a>
+					</td>
+					<td>
+						<a href="/elimina/{{idUser}}">
+							<button type="button" class="btn btn-outline-danger me-2">
+								Baja
+							</button>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+			{{/each}}
+
+		</table>
+	</div>
 </body>
+
+</html>

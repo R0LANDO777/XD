@@ -1,63 +1,89 @@
+<!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Cafeteria </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <title>Document</title>
 </head>
 
-<body style="background-color: rgb(255, 240, 198);">
-  <style>
-    body {
-      background-color: #d5cccc;
-    }
-  </style>
 
-  <div class="container" style="background-color: white;">
-    <header
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <img class="bi me-2" width="40" height="32"
-          src="https://inaturalist-open-data.s3.amazonaws.com/photos/65061739/original.jpg" alt="Foca">
+<style>
+  body {
+    background: rgb(82, 82, 82);
+    background: radial-gradient(circle, rgb(82, 82, 82) 0%, rgb(51, 59, 53) 100%);
+  }
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="/acerca" class="nav-link px-2 link-dark">About</a></li>
-      </ul>
+  .container {
+    background-color: rgb(94, 94, 94)
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(255, 208, 0);
+  }
+
+  h1 {
+    color: rgb(255, 255, 255);
+  }
+
+  span,
+  label {
+    color: rgb(211, 211, 211);
+  }
+
+  .btn {
+    background-color: rgb(255, 115, 0);
+    color: rgb(255, 255, 255);
+  }
+</style>
 
 
-      {{#if name}}
-      
-      {{#if rolp}}
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        
-      </ul>
-      {{/if}}
-      <div class="flex-shrink-0 ">
-          <a href="/personal">
-            <button type="button"  class="btn btn-outline-primary me-2">
-              Personal
-            </button>
-          </a>
-        </div>
-      <div class="flex-shrink-0 dropdown">
-        <a href="/logout" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <p>logout</p>
-        </a>
+<body>
+
+  <!-- Barra de navegación principal -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/acerca">Acerca de nosotros</a>
+          </li>
+        </ul>
       </div>
-        {{else}}
+    </div>
+  </nav>
 
-        <!--<div class="col-md-6 text-end">
-          <a href="/personal"><button type="button" class="btn btn-outline-primary px-1">Personal</button></a>
-        </div>-->
-        <div class="col-md-1 text-end">
-          <a href="/login"><button type="button" class="btn btn-outline-primary me-2">Acceder</button></a>
-        </div>
-        {{/if}}
-    </header>
-  </div>
+  <!-- Barra de navegación como personal -->
+
+  {{#if name}}
+    {{#if rolp}}
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"> </ul>
+    {{/if}}
+    <div class="flex-shrink-0 ">
+      <a href="/personal">
+        <button type="button" class="btn btn-outline-primary me-2">
+          Personal
+        </button>
+      </a>
+    </div>
+    <div class="flex-shrink-0 dropdown">
+      <a href="/logout" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <p>logout</p>
+      </a>
+    </div>
+
+  {{/if}}
+
 
   {{{body}}}
 

@@ -1,197 +1,183 @@
-<style>.card{ width: 400px; border:none; } .btr{
-  border-top-right-radius: 5px !important; } .btl{ border-top-left-radius: 5px
-  !important; } .btn-dark { color: #fff; background-color: #0d6efd;
-  border-color: #0d6efd; } .btn-dark:hover { color: #fff; background-color:
-  #0d6efd; border-color: #0d6efd; } .nav-pills{ display:table !important;
-  width:100%; } .nav-pills .nav-link { border-radius: 0px; border-bottom: 1px
-  solid #0d6efd40; } .nav-item{ display: table-cell; background: #0d6efd2e; }
-  .form{ padding: 10px; height: 300px; } .form input{ margin-bottom: 12px;
-  border-radius: 3px; } .form input:focus{ box-shadow: none; } .form button{
-  margin-top: 20px; } .tab-content{ padding-bottom: 150px; }
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+	<title>Document</title>
+</head>
+
+
+<style>
+	body {
+		background: rgb(82, 82, 82);
+		background: radial-gradient(circle, rgb(82, 82, 82) 0%, rgb(51, 59, 53) 100%);
+	}
+
+	.container {
+		background-color: rgb(94, 94, 94)
+	}
+
+	a {
+		text-decoration: none;
+		color: rgb(255, 208, 0);
+	}
+
+	h1 {
+		color: rgb(255, 255, 255);
+	}
+
+	span,
+	label {
+		color: rgb(211, 211, 211);
+	}
+
+	.btn {
+		background-color: rgb(255, 115, 0);
+		color: rgb(255, 255, 255);
+	}
 </style>
+
+
 
 <script src="/src/public/js/script"></script>
 
-<div class="d-flex justify-content-center align-items-center mt-5">
 
-  <div class="card">
-
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item text-center">
-        <a
-          class="nav-link active btl"
-          id="pills-home-tab"
-          data-toggle="pill"
-          href="#pills-home"
-          role="tab"
-          aria-controls="pills-home"
-          aria-selected="true"
-        >Login</a>
-      </li>
-      <li class="nav-item text-center">
-        <a
-          class="nav-link btr"
-          id="pills-profile-tab"
-          data-toggle="pill"
-          href="#pills-profile"
-          role="tab"
-          aria-controls="pills-profile"
-          aria-selected="false"
-        >Signup</a>
-      </li>
-
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-      <div
-        class="tab-pane fade show active"
-        id="pills-home"
-        role="tabpanel"
-        aria-labelledby="pills-home-tab"
-      >
-      <h3>Administrador</h3>
-
-        <form class="form px-4 pt-5" action="/entrar" method="post">
-
-          <input
-          
-            style="margin-top: 70px;"
-            type="email"
-            name="email"
-            class="form-control"
-            placeholder="Email"
-            required
-            minlength="5"
-            maxlength="50"
-          />
-
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            placeholder="Password"
-            minlength="8"
-            maxlength="25"
-            required
-          />
-
-          {{#if errors}}
-
-            <p>{{errors}}</p>
-
-          {{/if}}
-
-          <button class="btn btn-dark btn-block">Login</button>
-
-        </form>
-
-      </div>
-      <div
-        class="tab-pane fade"
-        id="pills-profile"
-        role="tabpanel"
-        aria-labelledby="pills-profile-tab"
-      >
-
-        <form class="form px-4" action="/registra" method="post" onsubmit="return validar ();">
-
-          <input
-            type="text"
-            name="apPaterno"
-            id="apPaterno"
-            class="form-control"
-            title="Pon tu apellido Paterno"
-            placeholder="Apellido paterno"
-            pattern="[A-Za-z]*"
-            minlength="4"
-            max="30"
-          />
-
-          <input
-            type="text"
-            name="apMaterno"
-            id="apMaterno"
-            class="form-control"
-            title="pon tu apellido Materno"
-            placeholder="Apellido materno"
-            pattern="[A-Za-z]*"
-            minlength="4"
-            maxlength="40"
-          />
-
-          <input
-            type="text"
-            name="nombre"
-            id="nombre"
-            class="form-control"
-            title="Pon tu nombre"
-            placeholder="Nombre o nombres"
-            pattern="[A-Za-z]*"
-            minlength="3"
-            maxlength="30"
-
-          />
-          <input
-            class="form-control"
-            name="fechaNacimiento"
-            type="date"
-            title="pon tu fecha de nacimiento"
-            placeholder="Fecha"
-            required
-            min="1960-12-31"
-            max="2010-12-31"
-          />
-
-          <input
-            name="telefono"
-            type="tel"
-            id="tel"
-            class="form-control"
-            placeholder="Numero de telefono"
-            title="Pon un numero de telefono con 10 digitos"
-            minlength="10"
-            maxlength="10"
-
-          />
-
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="form-control"
-            title="Pon tu correo electronico"
-            placeholder="Email"
-          />
-
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="form-control"
-            title="Pon tu contraseña"
-            placeholder="Password"
-            minlength="8"
-            maxlength="50"
-          />
+<body>
 
 
-          {{#if error}}
 
-            <p style="color: red;">{{error}}</p>
+	<!-- PANTALLAS DE LOGIN Y REGISTRO -->
 
-          {{/if}}
-            <input type="submit">
-          
+	<div class="tab-content" id="pills-tabContent">
+		<!-- MENU DE SELECCION -->
+		<div class="container w-50 mt-5 py-3">
 
-        </form>
+			<ul class="nav nav-pills">
+				<li class="nav-item">
+					<button class="btn" data-toggle="pill" href="#pills-login"> Iniciar sesión </button>
+				</li>
+				<br>
+				<li>
+					<button class="btn" data-toggle="pill" href="#pills-register"> Crear cuenta </button>
+				</li>
+			</ul>
+		</div>
 
-      </div>
 
-    </div>
+		<!-- LOGIN -->
+		<div class="tab-pane" id="pills-login" role="tabpanel" aria-labelledby="pills-home-tab">
+			<div class="container w-50 px-5 pb-5 mb-5">
+				<div class="row">
+					<div class="col">
+						<h1 class="fw-bold text-center pt-5 mb-5"> ¡Hola de nuevo! </h1>
 
-  </div>
+						<!-- Formulario de login -->
+						<form class="form" action="/entrar" method="post">
 
-</div>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"
-></script>
-<script src="/js/validacion.js"></script>
+
+							<div class="mb-4">
+								<label for="email" class="form-label"> email </label>
+								<input requiered type="email" name="email" class="form-control text-bg-light"
+									placeholder="ejemplo@cetis155.edu.mx" minlength="5" maxlength="50">
+							</div>
+
+							<div class="mb-4">
+								<label for="password" class="form-label"> contraseña </label>
+								<input requiered type="password" name="password" class="form-control text-bg-light"
+									placeholder="••••••••" minlength="8" maxlength="25">
+							</div>
+
+							{{#if errors}}
+							<p>{{errors}}</p>
+							{{/if}}
+
+							<div class="d-grid">
+								<button type="submit" class="btn"> iniciar sesión </button>
+							</div>
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- REGISTRO -->
+		<div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-profile-tab">
+			<div class="container w-50 px-5 pb-5 mb-5">
+				<div class="row">
+					<div class="col">
+						<h1 class="fw-bold text-center pt-5 mb-5"> ¡Te damos la bienvenida! </h1>
+						<form class="form px-4" action="/registra" method="post" onsubmit="return validar ();">
+
+
+							<div class="mb-4">
+								<label for="apPaterno" class="form-label"> Apellido paterno </label>
+								<input requiered type="text" id="apPaterno" name="apPaterno" class="form-control text-bg-light"
+									placeholder="apellido paterno" pattern="[A-Za-z]*" minlength="4" maxlength="40">
+							</div>
+
+							<div class="mb-4">
+								<label for="apMaterno" class="form-label"> Apellido materno </label>
+								<input requiered type="text" id="apMaterno" name="apMaterno" class="form-control text-bg-light"
+									placeholder="apellido materno" pattern="[A-Za-z]*" minlength="4" maxlength="40">
+							</div>
+
+							<div class="mb-4">
+								<label for="nombre" class="form-label"> Nombre </label>
+								<input requiered type="text" id="nombre" name="nombre" class="form-control text-bg-light"
+									placeholder="ingresa tu o tus nombres" pattern="[A-Za-z]*" minlength="3" maxlength="30">
+							</div>
+
+							<div class="mb-4">
+								<label for="fechaNacimiento" class="form-label"> Fecha de nacimiento </label>
+								<input requiered type="date" id="date" name="fechaNacimiento" class="form-control text-bg-light"
+									min="1960-12-31" max="2010-12-31">
+							</div>
+
+							<div class="mb-4">
+								<label for="telefono" class="form-label"> Número de teléfono </label>
+								<input requiered type="tel" id="tel" name="telefono" class="form-control text-bg-light"
+									placeholder="4490000000" minlength="10" maxlength="10">
+							</div>
+
+							<div class="mb-4">
+								<label for="email" class="form-label"> Email </label>
+								<input requiered type="email" id="email" name="email" class="form-control text-bg-light"
+									placeholder="ejemplo@cetis155.edu.mx" minlength="0" maxlength="50">
+							</div>
+
+							<div class="mb-4">
+								<label for="password" class="form-label"> Contraseña </label>
+								<input requiered type="password" id="password" name="password" class="form-control text-bg-light"
+									placeholder="••••••••" minlength="8" maxlength="25">
+							</div>
+
+							{{#if error}}
+							<p style="color: red;">{{error}}</p>
+							{{/if}}
+
+							<div class="d-grid">
+								<button type="submit" class="btn"> Crear cuenta </button>
+							</div>
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/validacion.js"></script>
+
+</body>
+
+</html>
