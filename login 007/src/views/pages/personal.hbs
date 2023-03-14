@@ -1,0 +1,36 @@
+<body >
+  <right><a href="/altaPersonal">Alta</a></right>
+
+  <center>
+    <h2>Personal</h2>
+  </center>
+
+  <center>
+    <table class="content-table">
+  </center>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each per}}
+     <tr>
+      <td>{{idUser}}</td>
+      <td>{{nombre}}</td>
+      <td><a href="/editar/{{idUser}}">
+        <button type="button"  class="btn btn-outline-primary me-2">
+              Editar
+            </button>
+          </a></td>
+      <td><a href="/elimina/{{idUser}}"><button type="button"  class="btn btn-outline-primary me-2">
+              Baja
+            </button></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+
+</body>
