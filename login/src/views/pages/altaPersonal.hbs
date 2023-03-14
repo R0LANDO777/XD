@@ -1,0 +1,67 @@
+<body>
+	<div class="container w-50 px-5 pb-5 my-5">
+		<div class="row">
+			<div class="col">
+				<h1 class="fw-bold text-center pt-5 mb-5"> Registro de empleados </h1>
+				<form class="form" action="/registraPer" method="post">
+
+
+					<div class="mb-4">
+						<label for="apPaterno" class="form-label"> Apellido paterno </label>
+						<input requiered type="text" id="apPaterno" name="apPaterno" class="form-control text-bg-light"
+							placeholder="apellido paterno" pattern="[A-Za-z]*" minlength="4" maxlength="40">
+					</div>
+
+					<div class="mb-4">
+						<label for="apMaterno" class="form-label"> Apellido materno </label>
+						<input requiered type="text" id="apMaterno" name="apMaterno" class="form-control text-bg-light"
+							placeholder="apellido materno" pattern="[A-Za-z]*" minlength="4" maxlength="40">
+					</div>
+
+					<div class="mb-4">
+						<label for="nombre" class="form-label"> Nombre </label>
+						<input requiered type="text" id="nombre" name="nombre" class="form-control text-bg-light"
+							placeholder="ingresa el nombre del empleado" pattern="[A-Za-z]*" minlength="3" maxlength="30">
+					</div>
+
+					<div class="mb-4">
+						<label for="fechaNacimiento" class="form-label"> Fecha de nacimiento </label>
+						<input requiered type="date" id="date" name="fechaNacimiento" class="form-control text-bg-light"
+							placeholder="1990/01/01" min="1960-12-31" max="2010-12-31">
+					</div>
+
+					<div class="mb-4">
+						<label for="telefono" class="form-label"> Número de teléfono </label>
+						<input requiered type="tel" id="tel" name="telefono" class="form-control text-bg-light"
+							placeholder="4490000000" minlength="10" maxlength="10">
+					</div>
+
+					<div class="mb-4">
+						<label for="email" class="form-label"> Email </label>
+						<input requiered type="email" id="email" name="email" class="form-control text-bg-light"
+							placeholder="ejemplo@cetis155.edu.mx" minlength="0" maxlength="50">
+					</div>
+
+					<div class="mb-4">
+						<label for="password" class="form-label"> Contraseña </label>
+						<input requiered type="password" id="password" name="password" class="form-control text-bg-light"
+							placeholder="••••••••" minlength="8" maxlength="25">
+					</div>
+
+					<input type="hidden" name="rol", value="p">
+
+					{{#if error}}
+						<p style="color: red;">{{error}}</p>
+					{{/if}}
+
+					<div class="d-grid">
+						<button type="submit" class="btn"> Registrar nuevo empleado </button>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
